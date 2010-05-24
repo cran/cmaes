@@ -1,0 +1,62 @@
+commit 49e3a20cdc1f43bc9c0e065a9d2e59b902b19fec
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2010-05-23 14:56:07 +0200
+
+    Release of 1.0-5
+
+commit a38b9c24f23bc0f2940e9ccc06c053f9ba2e4553
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2010-05-23 14:55:46 +0200
+
+    Fix incorrect case in filename of runner.r.
+
+commit 3ca5e511efbba866032f1cfba19c484621d3b2c7
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2010-05-23 14:53:52 +0200
+
+    Release of 1.0-4
+
+commit d37473868499a366b317c4584cb5b919c2651a92
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2010-05-23 14:51:17 +0200
+
+    Update unit test to use cma_es() instead of deprecated cmaES().
+
+commit 38086c79cc86bcab4cda460aafb31b240a93546c
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2010-05-23 14:50:48 +0200
+
+    Cleanup minimal set of test functions.
+
+commit 8b2cc34c8d7c80f6f56fba97c8518d139814c2f3
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2010-05-23 14:50:13 +0200
+
+    Fix constraint penalty handling.
+
+commit 7d5b45fd5cd645b473b892822961ff19cd8c0a92
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2010-03-08 13:10:39 +0100
+
+    Small changes to examples.
+
+commit 1b7c78937211ce41a1557931e8051b2535cd9867
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2010-03-08 12:29:02 +0100
+
+    Fix constraint handling.
+
+commit 00f573e7e7abc5542897dff9808ed95d5609f72d
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2009-11-13 00:51:05 +0100
+
+    More Roxygen cleanup.
+    
+    Cleanup roxygen comments and remove some of the test function cruft.
+    Also added bump-version script and fixed Makefile.
+
+commit 013ce310ddfe11b9f4628166902d421b0f5ab8d4
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2009-11-10 19:51:49 +0100
+
+    Switch to Roxygen.
