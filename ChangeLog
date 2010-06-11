@@ -1,3 +1,26 @@
+commit 1113809ce01e16a9473899832d34193f603419e9
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2010-06-11 23:15:35 +0200
+
+    Bump version number.
+
+commit 7a56e13960be57bfda3073ef3e0832450d0231d2
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2010-06-11 23:00:49 +0200
+
+    Fix bug in stopfitness interepretation.
+    
+    stopfitness was previously compared to value * fnscale. Now it is
+    (correctly) interpreted with respect to the value. The actual stop
+    condition is:
+    
+      value * fnscale <= stopfitness * fnscale
+    
+    This means that for minimization cma_es will stop whenever the current
+    best value is equal to or below the given stopfitness. If maximizing
+    then the best function value must be greater than or equal to the given
+    stopfitness.
+
 commit 49e3a20cdc1f43bc9c0e065a9d2e59b902b19fec
 Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
 Date:   2010-05-23 14:56:07 +0200

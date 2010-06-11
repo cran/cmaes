@@ -253,16 +253,17 @@ cma_es <- function(par, fn, ..., lower, upper, control=list()) {
       as.matrix(sqrt(e$values))
     BD <- B %*% D
 
-    ## break if fit:
-    if (arfitness[1] <= stopfitness) {
-      msg <- "Stop fitness reached."
-      break
-    }
-
     if (keep.best && arfitness[1] < best.fit) {
       best.fit <- arfitness[1] 
       best.par <- arx[, arindex[1]]
     }
+
+    ## break if fit:
+    if (arfitness[1] <= stopfitness * fnscale) {
+      msg <- "Stop fitness reached."
+      break
+    }
+
     if (diag.value)
       value.log[iter] <- arfitness[1]
     
