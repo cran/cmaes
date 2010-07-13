@@ -1,3 +1,12 @@
+commit d7a6ba07af46b7375c50c6d66cac79be7fc1464d
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2010-07-13 17:18:45 +0200
+
+    Copy names of par to final (optimal) parameter vector
+    
+    optim() copies the names of the par vector to the result parameter
+    vector, so we will do the same.
+
 commit 1113809ce01e16a9473899832d34193f603419e9
 Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
 Date:   2010-06-11 23:15:35 +0200

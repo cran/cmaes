@@ -304,6 +304,9 @@ cma_es <- function(par, fn, ..., lower, upper, control=list()) {
               constr.violations=cviol,
               diag=diag
               )
+  nm <- names(par)
+  if (!is.null(nm)) 
+    names(res$par) <- nm  
   class(res) <- "cma_es.result"
   return(res)
 }
