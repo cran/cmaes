@@ -17,15 +17,15 @@
 ## box constraint.
 test.corner <- function() {
   f <- function(x, ...)
-    crossprod(x)
+    drop(crossprod(x))
 
-  n <- 10
+  n <- 5
   start <- runif(n, 1, 100)
   opt <- rep(1.0, n)
-  
+
   res <- cma_es(start, f,
                 lower=rep(1, n), upper=rep(100, n),
-                control=list(maxit=400))
+                control=list(maxit=2000))
   
   mse <- drop(sqrt(crossprod(res$par - opt)))
   checkTrue(mse < 0.002)

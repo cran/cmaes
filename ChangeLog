@@ -1,3 +1,121 @@
+commit da6bc1c0ba3ad8d98b766a2cff78fc9d5d027b91
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2011-01-29 01:24:29 +0100
+
+    Fix R CMD CHECK warnings.
+
+commit 735ba47c9ff0b32c68457db143aa0831fb611583
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2011-01-29 01:21:42 +0100
+
+    New release.
+
+commit ccc9d1f3cc9bdb5cf724bd31a00d2bdee5fc90fd
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2010-12-20 16:32:42 +0100
+
+    * Add documentation for 'diag.value' control option.
+    
+    * Small efficiency updates to cma_es(). Most notable change is that
+      the generation of new individuals is now completely vectorized.
+    
+    * Better handling of box constraints. Penalized values are no longer
+      eligible to be the 'current best'.
+    
+    * Add a new function extract_population() which can reconstruct the
+      population at any iteration if the diagnostic options are set.
+
+commit a2de7f3441fba004b608f858883d92ecc9bba1fc
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2010-09-10 15:22:09 +0200
+
+    Allow vectorized fitness functions
+    
+    If the fitness function can accept multiple parameter settings at once,
+    we can now pass a complete population in. Using this option it is
+    trivial to parallelize the fitenss evaluation. This is especially
+    important when optimizing expensive functions.
+
+commit ba0222f98f33a35cca440b69da3ac109494892a4
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2010-07-14 00:43:18 +0200
+
+    Fix bug when maximizing.
+    
+    When maximizing, the best fitness value was not chosen based on
+    fn()*fnscale.
+    
+    Additionally some unit tests were refined.
+
+commit 933f5c7ac9315fa4777fb8379d68da83a3697385
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2010-07-13 22:39:49 +0200
+
+    More name fixes to be compatible with optim()
+    
+    USER VISIBLE CHANGE: When fn() is called, x will be a named vector if
+      par has names.
+    
+    RATIONAL: optim() behaves the same way and we want to be a drop in
+      replacement for optim() wherever possible.
+    
+    WHAT TO CHANGE: Nothing if you do not rely on being able to access
+      elements of x by name in fn(). If you have relied on this and have
+      manually set the names in fn(), you can now remove that piece of
+      code and only set the names on par once before calling cma_es().
+
+commit 2e98dfecb4b3d6e50771dbe6bd038d4c07077b85
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2010-07-13 22:07:40 +0200
+
+    Always track best solution based on actual parameters used.
+    
+    Instead of penalizing infeasable parmater combinations and then
+    caluclating the best solution based on this, use the actual function
+    values to track best solution.
+    
+    USER VISIBLE CHANGE: par element of result list should always be
+      feasible, even if the optimum is located on the border of the feasible
+      region. The values displayed by the trace message may differ from those
+      returned, because the continue to use the penalized values.
+    
+    RATIONAL: Previous behaviour was the result of a bad design choice and
+      is now considered a bug. While certain solutions may 'virtually' lie
+      outside the feasible region, all parameter settings returned by
+      cma_es() should be feasible.
+    
+    WHAT TO CHANGE: Nothing.
+
+commit 58360087a6255a784a67cd1153c79810ebbb2af1
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2010-07-13 21:46:00 +0200
+
+    Changes 'flat fitness function' warning to a message.
+    
+    Instead of throwing a warning every time we find a flat piece of fitness
+    landscape, we only show a message if trace=TRUE in the control list.
+    
+    USER VISIBLE CHANGE: cmaes() will no longer warn if the fitness
+      landscape is flat and sigma is increased.
+    
+    RATIONAL: These warnings are usualy harmless and only confused the
+      casual user.
+    
+    WHAT TO CHANGE: Nothing unless you want to continue to see the message.
+      If so, please set trace=TRUE in the control list.
+
+commit 8cf5c28ee4c9da3fb095463db910575afac0dca6
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2010-07-13 19:21:14 +0200
+
+    Remove unnecessary preallocation of internal matrix.
+
+commit 78987a16f22f5f5c02622c2ab0df6bc85d7f1803
+Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
+Date:   2010-07-13 17:20:32 +0200
+
+    Bump version to 1.0-9
+
 commit d7a6ba07af46b7375c50c6d66cac79be7fc1464d
 Author: Olaf Mersmann <olafm@statistik.tu-dortmund.de>
 Date:   2010-07-13 17:18:45 +0200
