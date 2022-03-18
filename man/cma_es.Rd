@@ -34,7 +34,7 @@ equal to \code{stopfitness}. This is the only way for the CMA-ES
 to \dQuote{converge}.}
 \item{keep.best}{return the best overall solution and not the best
 solution in the last population. Defaults to true.}
-\item{\code{sigma}}{Inital variance estimates. Can be a single
+\item{\code{sigma}}{Initial variance estimates. Can be a single
 number or a vector of length \eqn{D}, where \eqn{D} is the dimension
 of the parameter space.}
 \item{\code{mu}}{Population size.}

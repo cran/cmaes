@@ -7,9 +7,9 @@
 
 pkg <- "cmaes"
 
-if (require("RUnit", quietly=TRUE)) {
+if (require("RUnit", quietly = TRUE)) {
   wd <- getwd()
-  library(package=pkg, character.only=TRUE)  
+  library(package = pkg, character.only = TRUE)
   path <- system.file("unittests", package = pkg)
   stopifnot(file.exists(path), file.info(path.expand(path))$isdir)
   source(file.path(path, "runner.r"), echo = TRUE)

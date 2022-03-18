@@ -15,9 +15,10 @@
 ##' @export
 ##' @author Olaf Mersmann \email{olafm@@statistik.tu-dortmund.de}
 shift_function <- function(f, offset) {
-  force(offset);
-  newf <- function(x)
+  force(offset)
+  newf <- function(x) {
     f(x - offset)
+  }
   return(newf)
 }
 
@@ -33,8 +34,9 @@ shift_function <- function(f, offset) {
 ##' @author Olaf Mersmann \email{olafm@@statistik.tu-dortmund.de}
 rotate_function <- function(f, M) {
   M <- t(M)
-  newf <- function(x)
+  newf <- function(x) {
     f(drop(M %*% x))
+  }
   return(newf)
 }
 
@@ -49,9 +51,10 @@ rotate_function <- function(f, M) {
 ##' @export
 ##' @author Olaf Mersmann \email{olafm@@statistik.tu-dortmund.de}
 bias_function <- function(f, bias) {
-  force(bias);
-  newf <- function(x)
+  force(bias)
+  newf <- function(x) {
     f(x) + bias
+  }
   return(newf)
 }
 
@@ -62,8 +65,9 @@ bias_function <- function(f, bias) {
 ##'
 ##' @param x parameter vector.
 ##' @export
-f_sphere <- function(x)
+f_sphere <- function(x) {
   crossprod(x)
+}
 
 ################################################################################
 ##' Random function
@@ -73,9 +77,10 @@ f_sphere <- function(x)
 ##' @param x parameter vector.
 ##' @export
 ##' @author Olaf Mersmann \email{olafm@@statistik.tu-dortmund.de}
-f_rand <- function(x)
+f_rand <- function(x) {
   runif(1)
- 
+}
+
 ##' Rosenbrock function
 ##'
 ##' @param x parameter vector.
@@ -84,7 +89,7 @@ f_rand <- function(x)
 f_rosenbrock <- function(x) {
   d <- length(x)
   z <- x + 1
-  hz <- z[1:(d-1)]
+  hz <- z[1:(d - 1)]
   tz <- z[2:d]
   s <- sum(100 * (hz^2 - tz)^2 + (hz - 1)^2)
   return(s)
@@ -96,5 +101,6 @@ f_rosenbrock <- function(x) {
 ##' @param x parameter vector.
 ##' @export
 ##' @author David Arnu \email{david.arnu@@tu-dortmund.de}
-f_rastrigin <- function(x)
-  sum(x*x - 10 * cos(2*pi*x) + 10)
+f_rastrigin <- function(x) {
+  sum(x * x - 10 * cos(2 * pi * x) + 10)
+}
